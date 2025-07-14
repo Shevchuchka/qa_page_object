@@ -19,6 +19,10 @@ class ArticlePage extends PageObject {
   slug = '/article';
   url = this.url + this.slug;
 
+  get url() {
+    return this.url;
+  }
+
   get commentButton() {
     return '[Publish comment] button';
   }
