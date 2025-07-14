@@ -7,7 +7,10 @@ class Header {
 };
 
 class PageObject {
-  url = 'http://test.com';
+  constructor() {
+    this.url = 'http://test.com';
+  }
+
   header = new Header();
 
   clickOnLogo() {
@@ -16,11 +19,11 @@ class PageObject {
 };
 
 class ArticlePage extends PageObject {
-  slug = '/article';
-  url = this.url + this.slug;
+  constructor(url) {
+    super();
 
-  get url() {
-    return this.url;
+    this.slug = '/article';
+    this.url = url + this.slug;
   }
 
   get commentButton() {
